@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="padding_song_list">16dp</dimen>
+    <dimen name="line_height">2dp</dimen>
+    <dimen name="albums_vertical_spacing">25dp</dimen>
+    <dimen name="menu_bar_height">60dp</dimen>
 </resources>

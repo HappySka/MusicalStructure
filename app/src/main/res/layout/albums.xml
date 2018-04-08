@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <View style="@style/line" />
 
-</android.support.constraint.ConstraintLayout>
+    <GridView
+        android:id="@+id/album_grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:numColumns="auto_fit"
+        android:paddingTop="@dimen/padding_song_list"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="@dimen/albums_vertical_spacing"
+        tools:listitem="@layout/album_grid_item" />
+
+    <View style="@style/line" />
+
+    <include layout="@layout/menu_bar" />
+
+
+</LinearLayout>
