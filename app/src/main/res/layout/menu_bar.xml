@@ -17,6 +17,6 @@
     <TextView
         style="@style/menu_item"
         android:drawableTop="@drawable/playing"
-        android:text="Now Playing" />
+        android:text="@string/now_playing" />
 
 </LinearLayout>
