@@ -3,6 +3,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
     tools:context=".NowPlayingActivity">
+
+    <View style="@style/line" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/no_album_art" />
+
+    <TextView
+        android:id="@+id/playing_song_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorStrongAccent"
+        android:textSize="25sp"
+        tools:text="Song Name Placeholder" />
+
+    <TextView
+        android:id="@+id/playing_artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        tools:text="Some Cool Artist" />
+
+    <View style="@style/line" />
+
+    <include layout="@layout/menu_bar" />
 
 </LinearLayout>

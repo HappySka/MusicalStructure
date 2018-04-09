@@ -22,7 +22,10 @@
         <activity
             android:name=".SongsActivity"
             android:label="@string/songs"></activity>
-        <activity android:name=".NowPlayingActivity"></activity>
+        <activity
+            android:name=".NowPlayingActivity"
+            android:label="@string/now_playing"></activity>
+
     </application>
 
 </manifest>
