@@ -1,8 +1,8 @@
 package com.example.android.musicalstructure;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -11,9 +11,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.songs);
+        setContentView(R.layout.activity_songs);
 
-        //"Load" songs into app
+        //"Load" activity_songs into app
         if (SongCollection.songList == null)
             SongCollection.songList = new ArrayList<>();
 
@@ -28,10 +28,11 @@ public class MainActivity extends AppCompatActivity {
         SongCollection.songList.add(new Song("Breaking the Habit", "Linkin Park", "Meteora"));
         SongCollection.songList.add(new Song("Numb", "Linkin Park", "Meteora"));
 
-        SongAdapter itemsAdapter = new SongAdapter(this, SongCollection.songList);
-        ListView listView = findViewById(R.id.song_list);
-        listView.setAdapter(itemsAdapter);
-
+        //Start album activity as default activity
+        // Create a new intent to open the {@link NumbersActivity}
+        Intent albumIntent = new Intent(MainActivity.this, AlbumsActivity.class);
+        // Start the new activity
+        startActivity(albumIntent);
 
     }
 }
