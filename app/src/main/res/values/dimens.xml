@@ -4,4 +4,7 @@
     <dimen name="line_height">2dp</dimen>
     <dimen name="albums_vertical_spacing">25dp</dimen>
     <dimen name="menu_bar_height">60dp</dimen>
+    <dimen name="now_playing_padding">10dp</dimen>
+    <dimen name="now_playing_title_textsize">25sp</dimen>
+    <dimen name="now_playing_artist_text_size">20sp</dimen>
 </resources>

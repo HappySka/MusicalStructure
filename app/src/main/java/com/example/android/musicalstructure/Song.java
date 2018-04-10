@@ -15,33 +15,28 @@ public class Song implements Parcelable {
             return new Song[size];
         }
     };
-    private String song_name;
+    private final String artistAlbumSeperator = " - ";
     private String artist;
     private String album;
+    private String songName;
 
-    public Song(String song_name, String artist, String album) {
-        this.song_name = song_name;
+    public Song(String songName, String artist, String album) {
+        this.songName = songName;
         this.artist = artist;
         this.album = album;
     }
 
     public Song() {
-        this.song_name = "";
+        this.songName = "";
         this.artist = "";
         this.album = "";
     }
 
     private Song(Parcel in) {
         String[] songInfo = in.createStringArray();
-        this.song_name = songInfo[0];
+        this.songName = songInfo[0];
         this.artist = songInfo[1];
         this.album = songInfo[2];
-    }
-
-    //Standard Getter methods
-    //
-    public String getSongName() {
-        return song_name;
     }
 
     public String getArtist() {
@@ -52,11 +47,22 @@ public class Song implements Parcelable {
         return album;
     }
 
-    //Parcelable implementation to allow to hand over a song to the "Now Playing" activity
+    // Getter methods
     //
+    public String getSongName() {
+        return songName;
+    }
+
+    //Parcelable implementation to allow to hand over a song to the "Now Playing" activity
+    //replaced by usage of Singleton SongCollection
+
+    public String getArtistAndAlbum() {
+        return (artist + artistAlbumSeperator + album);
+    }
+
     public void writeToParcel(Parcel out, int flags) {
         String[] songInfo = new String[3];
-        songInfo[0] = this.song_name;
+        songInfo[0] = this.songName;
         songInfo[1] = this.artist;
         songInfo[2] = this.album;
 

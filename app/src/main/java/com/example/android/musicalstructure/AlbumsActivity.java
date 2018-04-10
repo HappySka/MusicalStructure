@@ -39,7 +39,7 @@ public class AlbumsActivity extends AppCompatActivity {
             // The code in this method will be executed when the activity_songs category is clicked on.
             @Override
             public void onClick(View view) {
-                // Create a new intent to open the {@link SongsActivity}
+                // Create a new intent to open the {@link AlbumsActivity}
                 Intent songsIntent = new Intent(AlbumsActivity.this, SongsActivity.class);
                 // Start the new activity
                 startActivity(songsIntent);
@@ -47,17 +47,17 @@ public class AlbumsActivity extends AppCompatActivity {
         });
 
         //If a song was already selected, also allow to switch to the Now Playing activity
-//        if (SongCollection.nowPlaying != null){
-//            TextView nowPlaying = findViewById(R.id.menu_playing);
-//            nowPlaying.setOnClickListener(new View.OnClickListener() {
-//
-//                @Override
-//                public void onClick(View view) {
-//                    Intent playingIntent = new Intent(MainActivity.this, NowPlayingActivity.class);
-//                    startActivity(playingIntent);
-//                }
-//            });
-//        }
+        if (SongCollection.nowPlaying != null) {
+            TextView nowPlaying = findViewById(R.id.menu_playing);
+            nowPlaying.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    Intent playingIntent = new Intent(AlbumsActivity.this, NowPlayingActivity.class);
+                    startActivity(playingIntent);
+                }
+            });
+        }
 
 
 

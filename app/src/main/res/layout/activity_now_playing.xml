@@ -20,8 +20,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:paddingTop="@dimen/now_playing_padding"
         android:textColor="@color/colorStrongAccent"
-        android:textSize="25sp"
+        android:textSize="@dimen/now_playing_title_textsize"
         tools:text="Song Name Placeholder" />
 
     <TextView
@@ -29,9 +30,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:paddingBottom="@dimen/now_playing_padding"
+        android:paddingTop="@dimen/now_playing_padding"
         android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        tools:text="Some Cool Artist" />
+        android:textSize="@dimen/now_playing_artist_text_size"
+        tools:text="Some Cool Artist - Some Cool Album" />
 
     <View style="@style/line" />
 
