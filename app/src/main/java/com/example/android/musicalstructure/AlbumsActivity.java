@@ -15,17 +15,16 @@ public class AlbumsActivity extends AppCompatActivity {
      * https://cmdrobot.deviantart.com/art/No-album-art-no-cover-placeholder-picture-458050685
      */
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_albums);
 
-        //create the list of activity_albums if not already done
+        //create the list of albums if not already done
         if (SongCollection.albumList == null)
             SongCollection.createAlbumList();
 
-        //use list of activity_albums to fill GridView
+        //use list of albums to fill GridView
         GridView gridView = findViewById(R.id.album_grid);
         AlbumAdapter itemsAdapter = new AlbumAdapter(this, SongCollection.albumList);
         gridView.setAdapter(itemsAdapter);

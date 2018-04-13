@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorStrongAccent"
-        android:textSize="15sp"
+        android:textSize="@dimen/song_list_title_text_size"
         android:textStyle="bold"
         tools:text="Fireball" />
 

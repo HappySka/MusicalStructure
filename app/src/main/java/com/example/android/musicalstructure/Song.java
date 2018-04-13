@@ -5,6 +5,7 @@ import android.os.Parcelable;
 
 public class Song implements Parcelable {
 
+    //parcelable integration now longer needed (see below) but kept as a reminder
     public static final Parcelable.Creator<Song> CREATOR
             = new Parcelable.Creator<Song>() {
         public Song createFromParcel(Parcel in) {
@@ -15,6 +16,8 @@ public class Song implements Parcelable {
             return new Song[size];
         }
     };
+
+
     private final String artistAlbumSeperator = " - ";
     private String artist;
     private String album;
@@ -39,6 +42,8 @@ public class Song implements Parcelable {
         this.album = songInfo[2];
     }
 
+    // Getter methods
+    //
     public String getArtist() {
         return artist;
     }
@@ -47,18 +52,17 @@ public class Song implements Parcelable {
         return album;
     }
 
-    // Getter methods
-    //
     public String getSongName() {
         return songName;
     }
 
-    //Parcelable implementation to allow to hand over a song to the "Now Playing" activity
-    //replaced by usage of Singleton SongCollection
-
     public String getArtistAndAlbum() {
         return (artist + artistAlbumSeperator + album);
     }
+
+
+    //Parcelable implementation to allow to hand over a song to the "Now Playing" activity
+    //replaced by usage of Singleton SongCollection but kept as a reminder
 
     public void writeToParcel(Parcel out, int flags) {
         String[] songInfo = new String[3];

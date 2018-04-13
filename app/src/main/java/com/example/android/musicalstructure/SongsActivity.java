@@ -20,6 +20,18 @@ public class SongsActivity extends AppCompatActivity {
         final ListView listView = findViewById(R.id.song_list);
         listView.setAdapter(itemsAdapter);
 
+        //Set onClickListener for the ListView
+        listView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Song item = (Song) listView.getItemAtPosition(position);
+                SongCollection.nowPlaying = item;
+                Intent playingIntent = new Intent(SongsActivity.this, NowPlayingActivity.class);
+                startActivity(playingIntent);
+            }
+        });
+
+
         //Set onClickListener for menu bar items
 
         // Find the View that shows the albums
@@ -49,16 +61,6 @@ public class SongsActivity extends AppCompatActivity {
             });
         }
 
-        //Set onClickListener for the ListView
-        listView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Song item = (Song) listView.getItemAtPosition(position);
-                SongCollection.nowPlaying = item;
-                Intent playingIntent = new Intent(SongsActivity.this, NowPlayingActivity.class);
-                startActivity(playingIntent);
-            }
-        });
 
     }
 }
