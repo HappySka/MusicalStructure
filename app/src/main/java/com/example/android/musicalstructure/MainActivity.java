@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_songs);
 
-        //"Load" activity_songs into app
+        //"Load" songs into app
         if (SongCollection.songList == null)
             SongCollection.songList = new ArrayList<>();
 

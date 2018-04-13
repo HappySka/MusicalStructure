@@ -10,6 +10,7 @@ public class SongCollection {
     public static Song nowPlaying;
     public static ArrayList<Song> songList;
     public static ArrayList<String> albumList;
+    public static String selectedAlbum;
 
     private SongCollection() {
     }

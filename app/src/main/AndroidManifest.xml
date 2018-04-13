@@ -18,14 +18,21 @@
         </activity>
         <activity
             android:name=".AlbumsActivity"
-            android:label="@string/albums"></activity>
+            android:label="@string/albums" />
         <activity
             android:name=".SongsActivity"
-            android:label="@string/songs"></activity>
+            android:label="@string/songs" />
         <activity
             android:name=".NowPlayingActivity"
-            android:label="@string/now_playing"></activity>
-
+            android:label="@string/now_playing" />
+        <activity
+            android:name=".AlbumSongsActivity"
+            android:parentActivityName=".AlbumsActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
     </application>
 
 </manifest>

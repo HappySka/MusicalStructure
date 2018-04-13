@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -59,7 +60,18 @@ public class AlbumsActivity extends AppCompatActivity {
             });
         }
 
-
+        //Set onClickListener for the GridView
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the GridView selected/clicked item text
+                String selectedItem = parent.getItemAtPosition(position).toString();
+                //Start AlbumSongsActivity with the album as input
+                SongCollection.selectedAlbum = selectedItem;
+                Intent playingIntent = new Intent(AlbumsActivity.this, AlbumSongsActivity.class);
+                startActivity(playingIntent);
+            }
+        });
 
     }
 }

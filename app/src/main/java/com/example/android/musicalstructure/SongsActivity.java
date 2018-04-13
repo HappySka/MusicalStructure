@@ -15,6 +15,7 @@ public class SongsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_songs);
 
+        //fill the ListView with all songs
         SongAdapter itemsAdapter = new SongAdapter(this, SongCollection.songList);
         final ListView listView = findViewById(R.id.song_list);
         listView.setAdapter(itemsAdapter);
